@@ -1,0 +1,90 @@
+{
+  "APP": {
+    "TITLE": "Oficios UY",
+    "DESCRIPTION": "Connecting professionals with clients in Uruguay"
+  },
+  "NAV": {
+    "SERVICES": "Services",
+    "PROFILE": "My Profile",
+    "LOGIN": "Login",
+    "REGISTER": "Sign Up",
+    "LOGOUT": "Logout"
+  },
+  "HOME": {
+    "HERO": {
+      "TITLE": "Find the professional you need",
+      "SUBTITLE": "We connect the best professionals in Uruguay with clients who need their services",
+      "SEARCH": "Search services...",
+      "SEARCH_BUTTON": "Search"
+    },
+    "FEATURED": {
+      "TITLE": "Featured Services",
+      "VIEW_ALL": "View All Services",
+      "HIRE": "Hire",
+      "PER_HOUR": "/hour"
+    }
+  },
+  "AUTH": {
+    "LOGIN": {
+      "TITLE": "Login",
+      "EMAIL": "Email",
+      "PASSWORD": "Password",
+      "SUBMIT": "Login",
+      "SUBMITTING": "Logging in...",
+      "NO_ACCOUNT": "Don't have an account?",
+      "REGISTER_HERE": "Sign up here",
+      "ERROR": "Incorrect email or password"
+    },
+    "REGISTER": {
+      "TITLE": "Create Account",
+      "FIRST_NAME": "First Name",
+      "LAST_NAME": "Last Name",
+      "EMAIL": "Email",
+      "PHONE": "Phone",
+      "PASSWORD": "Password",
+      "IS_PROVIDER": "I am a service provider",
+      "BUTTON": "Sign Up",
+      "REGISTERING": "Signing up...",
+      "HAS_ACCOUNT": "Already have an account?",
+      "LOGIN_HERE": "Login here",
+      "ERROR": "Registration error. Please try again."
+    }
+  },
+  "PROFILE": {
+    "TITLE": "My Profile",
+    "EDIT": "Edit Profile",
+    "FORM": {
+      "TITLE": "Edit Information",
+      "FIRST_NAME": "First Name",
+      "LAST_NAME": "Last Name",
+      "PHONE": "Phone",
+      "SAVE": "Save Changes",
+      "SAVING": "Saving...",
+      "CANCEL": "Cancel",
+      "ERROR": "Error updating profile"
+    }
+  },
+  "SERVICES": {
+    "TITLE": "All Services",
+    "LOCATION": "Location",
+    "RATING": "Rating",
+    "REVIEWS": "reviews",
+    "HIRE": "Hire",
+    "PER_HOUR": "hour"
+  },
+  "BOOKING": {
+    "TITLE": "Request Service",
+    "DESCRIPTION": "Service Description",
+    "DESCRIPTION_PLACEHOLDER": "Describe the work you need...",
+    "SCHEDULED_DATE": "Scheduled Date",
+    "ESTIMATED_HOURS": "Estimated Hours",
+    "SUBMIT": "Submit Request",
+    "SENDING": "Submitting...",
+    "CANCEL": "Cancel",
+    "SUCCESS": "Request submitted successfully",
+    "ERROR": "Error submitting request. Please try again."
+  },
+  "FOOTER": {
+    "RIGHTS": "All rights reserved."
+  }
+}

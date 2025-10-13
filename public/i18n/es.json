@@ -1,0 +1,90 @@
+{
+  "APP": {
+    "TITLE": "Oficios UY",
+    "DESCRIPTION": "Conectando profesionales con clientes en Uruguay"
+  },
+  "NAV": {
+    "SERVICES": "Servicios",
+    "PROFILE": "Mi Perfil",
+    "LOGIN": "Iniciar Sesión",
+    "REGISTER": "Registrarse",
+    "LOGOUT": "Cerrar Sesión"
+  },
+  "HOME": {
+    "HERO": {
+      "TITLE": "Encuentra el profesional que necesitas",
+      "SUBTITLE": "Conectamos a los mejores profesionales de Uruguay con clientes que necesitan sus servicios",
+      "SEARCH": "Buscar servicios...",
+      "SEARCH_BUTTON": "Buscar"
+    },
+    "FEATURED": {
+      "TITLE": "Servicios Destacados",
+      "VIEW_ALL": "Ver Todos los Servicios",
+      "HIRE": "Contratar",
+      "PER_HOUR": "/hora"
+    }
+  },
+  "AUTH": {
+    "LOGIN": {
+      "TITLE": "Iniciar Sesión",
+      "EMAIL": "Email",
+      "PASSWORD": "Contraseña",
+      "SUBMIT": "Iniciar Sesión",
+      "SUBMITTING": "Iniciando sesión...",
+      "NO_ACCOUNT": "¿No tienes cuenta?",
+      "REGISTER_HERE": "Regístrate aquí",
+      "ERROR": "Email o contraseña incorrectos"
+    },
+    "REGISTER": {
+      "TITLE": "Crear Cuenta",
+      "FIRST_NAME": "Nombre",
+      "LAST_NAME": "Apellido",
+      "EMAIL": "Email",
+      "PHONE": "Teléfono",
+      "PASSWORD": "Contraseña",
+      "IS_PROVIDER": "Soy proveedor de servicios",
+      "BUTTON": "Registrarse",
+      "REGISTERING": "Registrando...",
+      "HAS_ACCOUNT": "¿Ya tienes cuenta?",
+      "LOGIN_HERE": "Inicia sesión aquí",
+      "ERROR": "Error al registrar. Intenta nuevamente."
+    }
+  },
+  "PROFILE": {
+    "TITLE": "Mi Perfil",
+    "EDIT": "Editar Perfil",
+    "FORM": {
+      "TITLE": "Editar Información",
+      "FIRST_NAME": "Nombre",
+      "LAST_NAME": "Apellido",
+      "PHONE": "Teléfono",
+      "SAVE": "Guardar Cambios",
+      "SAVING": "Guardando...",
+      "CANCEL": "Cancelar",
+      "ERROR": "Error al actualizar perfil"
+    }
+  },
+  "SERVICES": {
+    "TITLE": "Todos los Servicios",
+    "LOCATION": "Ubicación",
+    "RATING": "Calificación",
+    "REVIEWS": "reseñas",
+    "HIRE": "Contratar",
+    "PER_HOUR": "hora"
+  },
+  "BOOKING": {
+    "TITLE": "Solicitar Servicio",
+    "DESCRIPTION": "Descripción del Servicio",
+    "DESCRIPTION_PLACEHOLDER": "Describe el trabajo que necesitas...",
+    "SCHEDULED_DATE": "Fecha Programada",
+    "ESTIMATED_HOURS": "Horas Estimadas",
+    "SUBMIT": "Enviar Solicitud",
+    "SENDING": "Enviando...",
+    "CANCEL": "Cancelar",
+    "SUCCESS": "Solicitud enviada exitosamente",
+    "ERROR": "Error al enviar solicitud. Intenta nuevamente."
+  },
+  "FOOTER": {
+    "RIGHTS": "Todos los derechos reservados."
+  }
+}

@@ -1,0 +1,63 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4">
+  <div class="max-w-md w-full space-y-8">
+    <div>
+      <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+        {{ 'AUTH.LOGIN.TITLE' | transloco }}
+      </h2>
+    </div>
+    
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="mt-8 space-y-6">
+      @if (errorMessage()) {
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+          {{ 'AUTH.LOGIN.ERROR' | transloco }}
+        </div>
+      }
+      
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">
+          {{ 'AUTH.LOGIN.EMAIL' | transloco }}
+        </label>
+        <input 
+          id="email"
+          formControlName="email"
+          type="email"
+          required
+          class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+      </div>
+      
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">
+          {{ 'AUTH.LOGIN.PASSWORD' | transloco }}
+        </label>
+        <input 
+          id="password"
+          formControlName="password"
+          type="password"
+          required
+          class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+      </div>
+      
+      <div>
+        <button 
+          type="submit"
+          [disabled]="loginForm.invalid || isLoading()"
+          class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50">
+          @if (isLoading()) {
+            {{ 'AUTH.LOGIN.SUBMITTING' | transloco }}
+          } @else {
+            {{ 'AUTH.LOGIN.SUBMIT' | transloco }}
+          }
+        </button>
+      </div>
+      
+      <div class="text-center">
+        <p class="text-sm text-gray-600">
+          {{ 'AUTH.LOGIN.NO_ACCOUNT' | transloco }}
+          <a routerLink="/auth/register" class="font-medium text-blue-600 hover:text-blue-500">
+            {{ 'AUTH.LOGIN.REGISTER_HERE' | transloco }}
+          </a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

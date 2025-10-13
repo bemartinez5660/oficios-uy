@@ -1,0 +1,25 @@
+<div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+  @if (service().imageUrl) {
+    <img [src]="service().imageUrl" [alt]="service().businessName" 
+         class="w-full h-48 object-cover">
+  }
+  <div class="p-6">
+    <h3 class="text-xl font-semibold mb-2">{{ service().businessName }}</h3>
+    <p class="text-gray-600 mb-4">{{ service().description }}</p>
+    <div class="flex justify-between items-center mb-4">
+      <span class="text-sm text-gray-500">{{ service().location }}</span>
+      <span class="text-lg font-bold text-blue-600">${{ service().hourlyRate }}/{{ 'SERVICES.PER_HOUR' | transloco }}</span>
+    </div>
+    <div class="flex justify-between items-center">
+      <div class="flex items-center">
+        <span class="text-yellow-500">★</span>
+        <span class="ml-1">{{ service().rating }} ({{ service().reviewCount }})</span>
+      </div>
+      <a routerLink="/booking" 
+         [queryParams]="{serviceId: service().id}"
+         class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">
+        {{ 'SERVICES.HIRE' | transloco }}
+      </a>
+    </div>
+  </div>
+</div>
