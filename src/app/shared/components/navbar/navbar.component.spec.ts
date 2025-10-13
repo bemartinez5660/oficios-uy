@@ -1,8 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
+import { provideZonelessChangeDetection } from '@angular/core';
 import { NavbarComponent } from './navbar.component';
-import { AuthService } from '../core/services/auth.service';
+import { AuthService } from '../../../core/services/auth.service';
+import { getTranslocoModule } from '../../../test-helpers/transloco-testing';
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -11,8 +13,9 @@ describe('NavbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavbarComponent],
+      imports: [NavbarComponent, getTranslocoModule()],
       providers: [
+        provideZonelessChangeDetection(),
         provideRouter([]),
         provideHttpClient()
       ]
@@ -28,21 +31,29 @@ describe('NavbarComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display login link when not authenticated', () => {
+  it('should display login and register links when not authenticated', () => {
     authService.isAuthenticated.set(false);
     fixture.detectChanges();
     
     const compiled = fixture.nativeElement;
-    const loginLink = compiled.querySelector('a[href*="login"]');
+    const links = compiled.querySelectorAll('a');
+    const loginLink = Array.from(links).find((link: any) => link.getAttribute('routerLink') === '/auth/login');
+    const registerLink = Array.from(links).find((link: any) => link.getAttribute('routerLink') === '/auth/register');
+    
     expect(loginLink).toBeTruthy();
+    expect(registerLink).toBeTruthy();
   });
 
-  it('should display logout button when authenticated', () => {
+  it('should display profile link and logout button when authenticated', () => {
     authService.isAuthenticated.set(true);
     fixture.detectChanges();
     
     const compiled = fixture.nativeElement;
+    const links = compiled.querySelectorAll('a');
+    const profileLink = Array.from(links).find((link: any) => link.getAttribute('routerLink') === '/profile');
     const logoutButton = compiled.querySelector('button');
-    expect(logoutButton?.textContent).toContain('Cerrar Sesión');
+    
+    expect(profileLink).toBeTruthy();
+    expect(logoutButton).toBeTruthy();
   });
 });
