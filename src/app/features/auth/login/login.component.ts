@@ -15,10 +15,10 @@ export class LoginComponent {
   private fb = inject(FormBuilder);
   private authService = inject(AuthService);
   private router = inject(Router);
-  
+
   protected readonly isLoading = signal(false);
   protected readonly errorMessage = signal('');
-  
+
   protected readonly loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]]
@@ -28,7 +28,7 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.isLoading.set(true);
       this.errorMessage.set('');
-      
+
       this.authService.login(this.loginForm.value as any).subscribe({
         next: () => {
           this.router.navigate(['/']);

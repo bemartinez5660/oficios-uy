@@ -1,18 +1,18 @@
 <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4">
-  <div class="max-w-md w-full space-y-8">
+  <div class="max-w-lg w-full space-y-8 bg-white rounded-lg shadow-md overflow-hidden p-10">
     <div>
       <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
         {{ 'AUTH.REGISTER.TITLE' | transloco }}
       </h2>
     </div>
-    
+
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="mt-8 space-y-6">
       @if (errorMessage()) {
         <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
           {{ errorMessage() }}
         </div>
       }
-      
+
       <div class="grid grid-cols-2 gap-4">
         <div>
           <label for="firstName" class="block text-sm font-medium text-gray-700">{{ 'AUTH.REGISTER.FIRST_NAME' | transloco }}</label>
@@ -25,25 +25,25 @@
                  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
         </div>
       </div>
-      
+
       <div>
         <label for="email" class="block text-sm font-medium text-gray-700">{{ 'AUTH.REGISTER.EMAIL' | transloco }}</label>
         <input id="email" formControlName="email" type="email" required
                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
       </div>
-      
+
       <div>
         <label for="phone" class="block text-sm font-medium text-gray-700">{{ 'AUTH.REGISTER.PHONE' | transloco }}</label>
         <input id="phone" formControlName="phone" type="tel"
                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
       </div>
-      
+
       <div>
         <label for="password" class="block text-sm font-medium text-gray-700">{{ 'AUTH.REGISTER.PASSWORD' | transloco }}</label>
         <input id="password" formControlName="password" type="password" required
                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
       </div>
-      
+
       <div class="flex items-center">
         <input id="isServiceProvider" formControlName="isServiceProvider" type="checkbox"
                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
@@ -51,7 +51,7 @@
           {{ 'AUTH.REGISTER.IS_PROVIDER' | transloco }}
         </label>
       </div>
-      
+
       <button type="submit" [disabled]="registerForm.invalid || isLoading()"
               class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50">
         @if (isLoading()) {
@@ -60,7 +60,7 @@
           {{ 'AUTH.REGISTER.BUTTON' | transloco }}
         }
       </button>
-      
+
       <div class="text-center">
         <p class="text-sm text-gray-600">
           {{ 'AUTH.REGISTER.HAS_ACCOUNT' | transloco }}

@@ -3,10 +3,11 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
 import { TranslocoModule } from '@jsverse/transloco';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-register',
-  imports: [ReactiveFormsModule, RouterLink, TranslocoModule],
+  imports: [ReactiveFormsModule, RouterLink, TranslocoModule, MatCardModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
