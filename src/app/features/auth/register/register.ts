@@ -1,21 +1,21 @@
 import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { AuthService } from '../../../core/services/auth.service';
+import { AuthService } from '../../../core/services/auth-service';
 import { TranslocoModule } from '@jsverse/transloco';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-register',
   imports: [ReactiveFormsModule, RouterLink, TranslocoModule, MatCardModule],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.css',
+  templateUrl: './register.html',
+  styleUrl: './register.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RegisterComponent {
-  private fb = inject(FormBuilder);
-  private authService = inject(AuthService);
-  private router = inject(Router);
+export class Register {
+  private readonly fb = inject(FormBuilder);
+  private readonly authService = inject(AuthService);
+  private readonly router = inject(Router);
 
   protected readonly isLoading = signal(false);
   protected readonly errorMessage = signal('');

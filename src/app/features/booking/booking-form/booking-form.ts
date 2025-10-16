@@ -1,21 +1,22 @@
-import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, signal, effect, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BookingService } from '../../../core/services/booking.service';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { BookingService } from '../../../core/services/booking-service';
 import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-booking-form',
   imports: [ReactiveFormsModule, TranslocoModule],
-  templateUrl: './booking-form.component.html',
-  styleUrl: './booking-form.component.css',
+  templateUrl: './booking-form.html',
+  styleUrl: './booking-form.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BookingFormComponent {
-  private fb = inject(FormBuilder);
-  private bookingService = inject(BookingService);
-  protected router = inject(Router);
-  private route = inject(ActivatedRoute);
+export class BookingForm {
+  private readonly fb = inject(FormBuilder);
+  private readonly bookingService = inject(BookingService);
+  protected readonly router = inject(Router);
+  private readonly route = inject(ActivatedRoute);
 
   protected readonly isLoading = signal(false);
   protected readonly errorMessage = signal('');
@@ -28,9 +29,12 @@ export class BookingFormComponent {
     estimatedHours: [1, [Validators.required, Validators.min(1)]]
   });
 
+  private queryParams = toSignal(this.route.queryParams);
+
   constructor() {
-    this.route.queryParams.subscribe(params => {
-      if (params['serviceId']) {
+    effect(() => {
+      const params = this.queryParams();
+      if (params?.['serviceId']) {
         this.bookingForm.patchValue({ serviceProviderId: params['serviceId'] });
       }
     });

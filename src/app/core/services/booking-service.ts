@@ -8,7 +8,7 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class BookingService {
-  private http = inject(HttpClient);
+  private readonly http = inject(HttpClient);
 
   createBooking(bookingData: BookingRequest): Observable<Booking> {
     return this.http.post<Booking>(`${environment.apiUrl}/bookings`, bookingData, {

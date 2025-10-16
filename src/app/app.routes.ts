@@ -1,31 +1,31 @@
 import { Routes } from '@angular/router';
-import { authGuard } from './core/guards/auth.guard';
+import { authGuard } from './core/guards/auth-guard';
 
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () => import('./features/home/home.component').then(m => m.HomeComponent)
+    loadComponent: () => import('./features/home/home').then(m => m.Home)
   },
   {
     path: 'auth/login',
-    loadComponent: () => import('./features/auth/login/login.component').then(m => m.LoginComponent)
+    loadComponent: () => import('./features/auth/login/login').then(m => m.Login)
   },
   {
     path: 'auth/register',
-    loadComponent: () => import('./features/auth/register/register.component').then(m => m.RegisterComponent)
+    loadComponent: () => import('./features/auth/register/register').then(m => m.Register)
   },
   {
     path: 'services',
-    loadComponent: () => import('./features/services/service-list/service-list.component').then(m => m.ServiceListComponent)
+    loadComponent: () => import('./features/services/service-list/service-list').then(m => m.ServiceList)
   },
   {
     path: 'profile',
-    loadComponent: () => import('./features/user/profile/profile.component').then(m => m.ProfileComponent),
+    loadComponent: () => import('./features/user/profile/profile').then(m => m.Profile),
     canActivate: [authGuard]
   },
   {
     path: 'booking',
-    loadComponent: () => import('./features/booking/booking-form/booking-form.component').then(m => m.BookingFormComponent),
+    loadComponent: () => import('./features/booking/booking-form/booking-form').then(m => m.BookingForm),
     canActivate: [authGuard]
   },
   {

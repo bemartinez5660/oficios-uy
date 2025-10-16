@@ -8,7 +8,7 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class UserService {
-  private http = inject(HttpClient);
+  private readonly http = inject(HttpClient);
 
   getProfile(): Observable<User> {
     return this.http.get<User>(`${environment.apiUrl}/users/profile`, {

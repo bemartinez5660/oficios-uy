@@ -11,13 +11,12 @@
       <div class="max-w-md mx-auto">
         <div class="flex">
           <input
-            [(ngModel)]="searchQuery"
-            (keyup.enter)="search()"
+            [value]="searchQuery()"
+            (input)="updateSearch($any($event.target).value)"
             type="text"
             [placeholder]="'HOME.HERO.SEARCH' | transloco"
             class="flex-1 px-4 py-3 rounded-l-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300">
           <button
-            (click)="search()"
             class="bg-yellow-500 hover:bg-yellow-600 px-6 py-3 rounded-r-lg font-semibold">
             {{ 'HOME.HERO.SEARCH_BUTTON' | transloco }}
           </button>

@@ -6,10 +6,10 @@ import { TranslocoModule } from '@jsverse/transloco';
 @Component({
   selector: 'app-service-card',
   imports: [RouterLink, TranslocoModule],
-  templateUrl: './service-card.component.html',
-  styleUrl: './service-card.component.css',
+  templateUrl: './service-card.html',
+  styleUrl: './service-card.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ServiceCardComponent {
+export class ServiceCard {
   readonly service = input.required<ServiceProvider>();
 }

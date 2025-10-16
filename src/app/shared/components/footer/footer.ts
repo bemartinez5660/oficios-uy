@@ -4,8 +4,8 @@ import { TranslocoModule } from '@jsverse/transloco';
 @Component({
   selector: 'app-footer',
   imports: [TranslocoModule],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css',
+  templateUrl: './footer.html',
+  styleUrl: './footer.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FooterComponent {}
+export class Footer {}

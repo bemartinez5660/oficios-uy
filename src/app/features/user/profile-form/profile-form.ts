@@ -9,19 +9,18 @@ import {
 } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { User } from '../../../core/models/user.model';
-import { UserService } from '../../../core/services/user.service';
+import { UserService } from '../../../core/services/user-service';
 
 @Component({
   selector: 'app-profile-form',
-  standalone: true,
   imports: [ReactiveFormsModule],
-  templateUrl: './profile-form.component.html',
-  styleUrl: './profile-form.component.css',
+  templateUrl: './profile-form.html',
+  styleUrl: './profile-form.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProfileFormComponent {
-  private fb = inject(FormBuilder);
-  private userService = inject(UserService);
+export class ProfileForm {
+  private readonly fb = inject(FormBuilder);
+  private readonly userService = inject(UserService);
 
   readonly user = input.required<User>();
   readonly cancel = output<void>();

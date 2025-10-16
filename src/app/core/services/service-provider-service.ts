@@ -5,7 +5,7 @@ import { ServiceProvider, ServiceCategory } from '../models/service.model';
   providedIn: 'root'
 })
 export class ServiceProviderService {
-  private servicesSignal = signal<ServiceProvider[]>([
+  private readonly servicesSignal = signal<ServiceProvider[]>([
     {
       id: '1',
       userId: '1',
