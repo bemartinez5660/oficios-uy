@@ -53,7 +53,7 @@ export class ProfileForm {
       this.isLoading.set(true);
       this.errorMessage.set('');
 
-      this.userService.updateProfile(this.profileForm.value as any).subscribe({
+      this._userService.updateProfile(userData).subscribe({
         next: () => {
           this.saved.emit();
           this.isLoading.set(false);
