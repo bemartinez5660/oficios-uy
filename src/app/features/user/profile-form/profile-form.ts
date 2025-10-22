@@ -20,7 +20,7 @@ import { UserService } from '../../../core/services/user-service';
 })
 export class ProfileForm {
   private readonly fb = inject(FormBuilder);
-  private readonly userService = inject(UserService);
+  private readonly _userService = inject(UserService);
 
   readonly user = input.required<User>();
   readonly cancel = output<void>();
@@ -53,7 +53,7 @@ export class ProfileForm {
       this.isLoading.set(true);
       this.errorMessage.set('');
 
-      this._userService.updateProfile(userData).subscribe({
+      this._userService.updateProfile(this.profileForm.getRawValue() as any).subscribe({
         next: () => {
           this.saved.emit();
           this.isLoading.set(false);

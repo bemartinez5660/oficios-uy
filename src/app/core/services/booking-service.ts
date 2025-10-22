@@ -11,19 +11,19 @@ export class BookingService {
   private readonly http = inject(HttpClient);
 
   createBooking(bookingData: BookingRequest): Observable<Booking> {
-    return this.http.post<Booking>(`${environment.apiUrl}/bookings`, bookingData, {
+    return this.http.post<Booking>(`${environment.apiUrl}${environment.v1}/bookings`, bookingData, {
       withCredentials: true
     });
   }
 
   getUserBookings(): Observable<Booking[]> {
-    return this.http.get<Booking[]>(`${environment.apiUrl}/bookings/user`, {
+    return this.http.get<Booking[]>(`${environment.apiUrl}${environment.v1}/bookings/user`, {
       withCredentials: true
     });
   }
 
   getBookingById(id: string): Observable<Booking> {
-    return this.http.get<Booking>(`${environment.apiUrl}/bookings/${id}`, {
+    return this.http.get<Booking>(`${environment.apiUrl}${environment.v1}/bookings/${id}`, {
       withCredentials: true
     });
   }

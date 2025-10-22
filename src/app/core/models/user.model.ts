@@ -1,7 +1,7 @@
 export interface User {
   id: string;
   email: string;
-  firstName: string;
+  firstName: string | null;
   lastName: string;
   phone?: string;
   isServiceProvider: boolean;

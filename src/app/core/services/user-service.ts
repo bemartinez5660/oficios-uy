@@ -11,13 +11,13 @@ export class UserService {
   private readonly http = inject(HttpClient);
 
   getProfile(): Observable<User> {
-    return this.http.get<User>(`${environment.apiUrl}/users/profile`, {
+    return this.http.get<User>(`${environment.apiUrl}${environment.v1}/users/profile`, {
       withCredentials: true
     });
   }
 
   updateProfile(userData: Partial<User>): Observable<User> {
-    return this.http.put<User>(`${environment.apiUrl}/users/profile`, userData, {
+    return this.http.put<User>(`${environment.apiUrl}${environment.v1}/users/profile`, userData, {
       withCredentials: true
     });
   }
